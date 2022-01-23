@@ -7,7 +7,7 @@ import { Avatar, IconButton } from '@material-ui/core';
 import ForumIcon from '@material-ui/icons/Forum';
 import NotificationsActiveIcon from '@material-ui/icons/NotificationsActive';
 import PersonAddIcon from '@mui/icons-material/PersonAdd';
-//import shareader from "/"
+//import Amina from "../../../public/assets/Amina.PNG"
 //import { useStateValue } from './StateProvider';
 
 
@@ -38,7 +38,7 @@ function Header() {
           {/* *************************************************** */}
             <div className="header__right">
                 <div className="header__right__info">
-                    <Avatar src=""/>
+                    <Avatar src={process.env.PUBLIC_URL + '/assets/Amina.PNG'}/>
                     {/* <Avatar src={user.photoURL}/> */}
                     <h4>Amina</h4>
                     {/* <h4>{user.displayName}</h4> */}

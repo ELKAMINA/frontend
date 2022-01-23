@@ -1,6 +1,5 @@
 // import React, {useState} from 'react';
 import './MessageSender.css';
-import './MessageSender.css'
 import { Avatar } from '@material-ui/core';
 import VideocamIcon from '@material-ui/icons/Videocam';
 import PhotoLibraryIcon from '@material-ui/icons/PhotoLibrary';
@@ -35,14 +34,13 @@ function MessageSender() {
                 <Avatar src=""/>
                 <form>
                     <input 
-                    // value = {input}
-                    // onChange={(e)=> setInput(e.target.value)}
-                    // className="MessageSender__input" placeholder={`What's on your mind ${user.displayName}?`}
+                    value = ""
+                    className="MessageSender__input" placeholder="What's on your mind Amina ?"
                     />
                     <input 
-                    // value = ""
+                    value = ""
                     // onChange={(e)=> setImageUrl(e.target.value)}
-                    // placeholder="image URL (Optional)"
+                    placeholder="image URL (Optional)"
                     />
                     {/* <button onClick= {handleSubmit} type="submit">Hidden Button</button> */}
                 </form>

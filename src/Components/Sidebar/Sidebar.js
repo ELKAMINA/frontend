@@ -25,9 +25,33 @@ function Sidebar(){
                 <SidebarRow Icon={ExpandMoreOutLined} title = "More"/>
             </div>
             <div className="sidebar__bottom">
-                    <ul className="sidebar__top_sidebarFriendList">
-                        <li className="sidebar__top_sidebarFriend">
-                            <img className="sidebar__top_sideFriendImg" src={process.env.PUBLIC_URL + '/assets/baltazar.png'} alt=""/>
+                    <ul className="sidebar__bottom_sidebarFriendList">
+                        <li className="sidebar__bottom_sidebarFriend">
+                            <img className="sidebar__bottom_sideFriendImg" src={process.env.PUBLIC_URL + '/assets/baltazar.png'} alt=""/>
+                            <span className='sidebarFriendName'>Mahmoud</span>
+                        </li>
+                    </ul>
+                    <ul className="sidebar__bottom_sidebarFriendList">
+                        <li className="sidebar__bottom_sidebarFriend">
+                            <img className="sidebar__bottom_sideFriendImg" src={process.env.PUBLIC_URL + '/assets/baltazar.png'} alt=""/>
+                            <span className='sidebarFriendName'>Mahmoud</span>
+                        </li>
+                    </ul>
+                    <ul className="sidebar__bottom_sidebarFriendList">
+                        <li className="sidebar__bottom_sidebarFriend">
+                            <img className="sidebar__bottom_sideFriendImg" src={process.env.PUBLIC_URL + '/assets/baltazar.png'} alt=""/>
+                            <span className='sidebarFriendName'>Mahmoud</span>
+                        </li>
+                    </ul>
+                    <ul className="sidebar__bottom_sidebarFriendList">
+                        <li className="sidebar__bottom_sidebarFriend">
+                            <img className="sidebar__bottom_sideFriendImg" src={process.env.PUBLIC_URL + '/assets/baltazar.png'} alt=""/>
+                            <span className='sidebarFriendName'>Mahmoud</span>
+                        </li>
+                    </ul>
+                    <ul className="sidebar__bottom_sidebarFriendList">
+                        <li className="sidebar__bottom_sidebarFriend">
+                            <img className="sidebar__bottom_sideFriendImg" src={process.env.PUBLIC_URL + '/assets/baltazar.png'} alt=""/>
                             <span className='sidebarFriendName'>Mahmoud</span>
                         </li>
                     </ul>

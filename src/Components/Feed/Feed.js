@@ -3,6 +3,7 @@
 import './Feed.css';
 import MessageSender from '../MessengerSender/MessageSender';
 import Post from '../Posts/Post';
+import {Posts} from '../../dummyData';
 
 function Feed() {
 // const [posts, setPosts]= useState([]);
@@ -15,19 +16,19 @@ function Feed() {
         <div className = "feed">
             {/* MessageSender */}
             <MessageSender />
-            <Post />
             {/* Post */}
-            {/* {posts.map((post) => (
+            {Posts.map((post) => (
                 <Post 
-                // key={post.id}
+                key={post.id}
                 // profilePic={post.data.profilePic}
                 // message={post.data.message}
                 // timestamp={post.data.timestamp}
                 // username={post.data.username}
                 // image={post.data.image}
-                /> */}
+                post={post}
+                />
+            ))}
         </div>
-            )
+    )
 }
-
 export default Feed;

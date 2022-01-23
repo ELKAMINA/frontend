@@ -6,10 +6,17 @@ import ChatBubbleOutlineIcon from '@material-ui/icons/ChatBubbleOutline';
 import NearMeIcon from '@material-ui/icons/NearMe';
 import AccountCircleIcon from '@material-ui/icons/AccountCircle';
 import {ExpandMoreOutlined} from '@material-ui/icons';
+import { useState } from 'react';
 
 
 function Post({post}) {
-    console.log(post.photo);
+    const [like, setLike] = useState(post.like)
+    const [isLiked, setisLiked] = useState(false)
+    const likeHandler = ()=> {
+        setLike(isLiked ? like - 1 : like + 1)
+        setisLiked(!isLiked)
+        
+    }
     return (
         <div className="post">
             <div className="post__top">
@@ -29,8 +36,8 @@ function Post({post}) {
             </div>
             <div className="post__options">
                 <div className="post__option">
-                <VolunteerActivismIcon/>
-                <p>Give</p>
+                <VolunteerActivismIcon onClick={likeHandler}/>
+                <p>{like}</p>
                 </div>
                 <div className="post__option">
                 <ChatBubbleOutlineIcon/>

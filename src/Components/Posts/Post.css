@@ -34,11 +34,14 @@
 
 .post__image > img{
     width : 100%;
+    display: flex;
+    flex-direction: row;
 }
 
 .post__image > img {
     width : 100%
 }
+
 
 .post__options{
     padding-top: 10px;

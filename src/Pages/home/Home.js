@@ -16,7 +16,7 @@ function Home() {
         <Sidebar/>
         <Feed />
         <Widget />
-      </div>
+    </div>
     {/* <Feed/> */}
   </div>
   )

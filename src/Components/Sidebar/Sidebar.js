@@ -1,27 +1,37 @@
-import { useRadioGroup } from '@material-ui/core';
-import ExpandMore from '@material-ui/icons/ExpandMore';
 import React from 'react';
 import './Sidebar.css';
-import SidebarRow from './SidebarRow';
-import LocalHospitalIcon from '@material-ui/icons/LocalHospital';
+import SidebarRow from '../SidebarRow/SidebarRow';
+import BookmarksIcon from '@mui/icons-material/Bookmarks';
 import PeopleIcon from '@material-ui/icons/People';
 import ChatIcon from '@material-ui/icons/Chat';
 import StorefrontIcon from '@material-ui/icons/Storefront';
 import VideoLibraryIcon from '@material-ui/icons/VideoLibrary';
 import ExpandMoreOutLined from "@material-ui/icons/ExpandMoreOutlined";
-import {useStateValue} from "./StateProvider";
+import DynamicFeedIcon from '@mui/icons-material/DynamicFeed';
+// import {useStateValue} from "./StateProvider";
 
 function Sidebar(){
-    const [{user}, dispatch] = useStateValue();
+    // const [{user}, dispatch] = useStateValue();
     return(
         <div className="sidebar">
-            <SidebarRow src={user.photoURL} title = {user.displayName}/>
-            <SidebarRow Icon={LocalHospitalIcon} title="Covid19 VFF"/>
-            <SidebarRow Icon={PeopleIcon} title = "pages"/>
-            <SidebarRow Icon={ChatIcon} title = "Messenger"/>
-            <SidebarRow Icon={StorefrontIcon} title = "Marketplace"/>
-            <SidebarRow Icon={VideoLibraryIcon} title = "Videos"/>
-            <SidebarRow Icon={ExpandMoreOutLined} title = "Marketplace"/>
+            <div className="sidebar__top">
+                <SidebarRow src={process.env.PUBLIC_URL + '/assets/Amina.PNG'} title = "Amina ELK"/>
+                <SidebarRow Icon={DynamicFeedIcon} title = "Mon flux"/>
+                <SidebarRow Icon={BookmarksIcon} title="Enregistrements"/>
+                <SidebarRow Icon={PeopleIcon} title = "Groupes"/>
+                <SidebarRow Icon={ChatIcon} title = "Messenger"/>
+                <SidebarRow Icon={StorefrontIcon} title = "Marketplace"/>
+                <SidebarRow Icon={VideoLibraryIcon} title = "Videos"/>
+                <SidebarRow Icon={ExpandMoreOutLined} title = "More"/>
+            </div>
+            <div className="sidebar__bottom">
+                    <ul className="sidebar__top_sidebarFriendList">
+                        <li className="sidebar__top_sidebarFriend">
+                            <img className="sidebar__top_sideFriendImg" src={process.env.PUBLIC_URL + '/assets/baltazar.png'} alt=""/>
+                            <span className='sidebarFriendName'>Mahmoud</span>
+                        </li>
+                    </ul>
+            </div>
         </div>
     )
 }

@@ -1,47 +1,50 @@
-import React, {useState} from 'react';
+// import React, {useState} from 'react';
 import './MessageSender.css';
+import './MessageSender.css'
 import { Avatar } from '@material-ui/core';
 import VideocamIcon from '@material-ui/icons/Videocam';
 import PhotoLibraryIcon from '@material-ui/icons/PhotoLibrary';
 import InsertEmoticonIcon from '@material-ui/icons/InsertEmoticon';
-import {useStateValue} from "./StateProvider";
-import db from "./firebase";
-import firebase from 'firebase/compat/app';
+// import {useStateValue} from "./StateProvider";
+// import db from "./firebase";
+// import firebase from 'firebase/compat/app';
 
 
 function MessageSender() {
-    const [{user}, dispatch] = useStateValue();
-    const [input, setInput] = useState("");
-    const [imageUrl, setImageUrl] = useState("");
+    // const [{user}, dispatch] = useStateValue();
+    // const [input, setInput] = useState("");
+    // const [imageUrl, setImageUrl] = useState("");
 
-    const handleSubmit = e => {
-        e.preventDefault()
+    // const handleSubmit = e => {
+    //     e.preventDefault()
 
-        db.collection("posts").add({
-            message : input,
-            timestamp : firebase.firestore.FieldValue.serverTimestamp(),
-            profilePic: user.photoURL,
-            username : user.displayName,
-            image : imageUrl,
-        })
+    //     db.collection("posts").add({
+    //         message : input,
+    //         timestamp : firebase.firestore.FieldValue.serverTimestamp(),
+    //         profilePic: user.photoURL,
+    //         username : user.displayName,
+    //         image : imageUrl,
+    //     })
 
-        setInput("");
-        setImageUrl("");
-    };
+    //     setInput("");
+    //     setImageUrl("");
+    // };
     return (
         <div className = "MessageSender">
             <div className="MessageSender__top">
-                <Avatar src={user.photoURL}/>
+                <Avatar src=""/>
                 <form>
                     <input 
-                    value = {input}
-                    onChange={(e)=> setInput(e.target.value)}
-                    className="MessageSender__input" placeholder={`What's on your mind ${user.displayName}?`}/>
+                    // value = {input}
+                    // onChange={(e)=> setInput(e.target.value)}
+                    // className="MessageSender__input" placeholder={`What's on your mind ${user.displayName}?`}
+                    />
                     <input 
-                    value = {imageUrl}
-                    onChange={(e)=> setImageUrl(e.target.value)}
-                    placeholder="image URL (Optional)"/>
-                    <button onClick= {handleSubmit} type="submit">Hidden Button</button>
+                    // value = ""
+                    // onChange={(e)=> setImageUrl(e.target.value)}
+                    // placeholder="image URL (Optional)"
+                    />
+                    {/* <button onClick= {handleSubmit} type="submit">Hidden Button</button> */}
                 </form>
             </div>
             <div className="MessageSender__bottom">

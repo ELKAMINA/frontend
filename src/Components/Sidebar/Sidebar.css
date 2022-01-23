@@ -1,4 +1,10 @@
-.sidebar {
+.sidebar{
+display: flex;
+flex-direction: column;
+}
+
+.sidebar__top{
     padding: 25px  10px;
     flex : 0.33;
+    box-shadow: 0px 5px 8px -9px rgba(0, 0, 0.75);
 }

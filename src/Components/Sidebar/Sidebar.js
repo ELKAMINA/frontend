@@ -1,4 +1,4 @@
-import React from 'react';
+
 import './Sidebar.css';
 import SidebarRow from '../SidebarRow/SidebarRow';
 import BookmarksIcon from '@mui/icons-material/Bookmarks';
@@ -9,6 +9,8 @@ import VideoLibraryIcon from '@material-ui/icons/VideoLibrary';
 import ExpandMoreOutLined from "@material-ui/icons/ExpandMoreOutlined";
 import DynamicFeedIcon from '@mui/icons-material/DynamicFeed';
 // import {useStateValue} from "./StateProvider";
+import {Users} from "../../dummyData"
+import Closefriends from '../CloseFriends/Closefriends';
 
 function Sidebar(){
     // const [{user}, dispatch] = useStateValue();
@@ -26,34 +28,9 @@ function Sidebar(){
             </div>
             <div className="sidebar__bottom">
                     <ul className="sidebar__bottom_sidebarFriendList">
-                        <li className="sidebar__bottom_sidebarFriend">
-                            <img className="sidebar__bottom_sideFriendImg" src={process.env.PUBLIC_URL + '/assets/baltazar.png'} alt=""/>
-                            <span className='sidebarFriendName'>Mahmoud</span>
-                        </li>
-                    </ul>
-                    <ul className="sidebar__bottom_sidebarFriendList">
-                        <li className="sidebar__bottom_sidebarFriend">
-                            <img className="sidebar__bottom_sideFriendImg" src={process.env.PUBLIC_URL + '/assets/baltazar.png'} alt=""/>
-                            <span className='sidebarFriendName'>Mahmoud</span>
-                        </li>
-                    </ul>
-                    <ul className="sidebar__bottom_sidebarFriendList">
-                        <li className="sidebar__bottom_sidebarFriend">
-                            <img className="sidebar__bottom_sideFriendImg" src={process.env.PUBLIC_URL + '/assets/baltazar.png'} alt=""/>
-                            <span className='sidebarFriendName'>Mahmoud</span>
-                        </li>
-                    </ul>
-                    <ul className="sidebar__bottom_sidebarFriendList">
-                        <li className="sidebar__bottom_sidebarFriend">
-                            <img className="sidebar__bottom_sideFriendImg" src={process.env.PUBLIC_URL + '/assets/baltazar.png'} alt=""/>
-                            <span className='sidebarFriendName'>Mahmoud</span>
-                        </li>
-                    </ul>
-                    <ul className="sidebar__bottom_sidebarFriendList">
-                        <li className="sidebar__bottom_sidebarFriend">
-                            <img className="sidebar__bottom_sideFriendImg" src={process.env.PUBLIC_URL + '/assets/baltazar.png'} alt=""/>
-                            <span className='sidebarFriendName'>Mahmoud</span>
-                        </li>
+                        {Users.map((u)=> (
+                            <Closefriends key={u.id} user={u}/>
+                        ))}
                     </ul>
             </div>
         </div>

@@ -4,45 +4,44 @@ import { Avatar } from '@material-ui/core';
 import VideocamIcon from '@material-ui/icons/Videocam';
 import PhotoLibraryIcon from '@material-ui/icons/PhotoLibrary';
 import InsertEmoticonIcon from '@material-ui/icons/InsertEmoticon';
-// import {useStateValue} from "./StateProvider";
-// import db from "./firebase";
-// import firebase from 'firebase/compat/app';
+import { useState, useEffect, useRef } from 'react';
+import { AuthContext } from '../../context/AuthContext';
+import { useContext } from 'react';
+import axiosInstance from "../../config";
 
 
 function MessageSender() {
-    // const [{user}, dispatch] = useStateValue();
-    // const [input, setInput] = useState("");
-    // const [imageUrl, setImageUrl] = useState("");
+    const { user } = useContext(AuthContext)
+    const PF = process.env.REACT_APP_PUBLIC_FOLDER
+    const desc = useRef()
+    const [input, setInput] = useState("")
+    const handleSubmit = async (e)=> {
+        e.preventDefault()
+        const newPost = {
+            userId : user._id,
+            desc : desc.current.value,
+        }
+        await axiosInstance.post("/post", newPost)
+        .catch(err =>{
+            console.log(err)
+        })
+        setInput("");
+        window.location.reload()
+        }
 
-    // const handleSubmit = e => {
-    //     e.preventDefault()
-
-    //     db.collection("posts").add({
-    //         message : input,
-    //         timestamp : firebase.firestore.FieldValue.serverTimestamp(),
-    //         profilePic: user.photoURL,
-    //         username : user.displayName,
-    //         image : imageUrl,
-    //     })
-
-    //     setInput("");
-    //     setImageUrl("");
-    // };
     return (
         <div className = "MessageSender">
             <div className="MessageSender__top">
-                <Avatar src=""/>
-                <form>
+                <Avatar src={PF+"noAvatar.png"}/>
+                <form >
                     <input 
-                    value = ""
-                    className="MessageSender__input" placeholder="What's on your mind Amina ?"
+                    value = {input}
+                    onChange={(e)=> setInput(e.target.value)}
+                    className="MessageSender__input" placeholder={"What's on your mind "+ user.username + "?"}
+                    aria-label="fullname"
+                    ref={desc}
                     />
-                    <input 
-                    value = ""
-                    // onChange={(e)=> setImageUrl(e.target.value)}
-                    placeholder="image URL (Optional)"
-                    />
-                    {/* <button onClick= {handleSubmit} type="submit">Hidden Button</button> */}
+                    <button onClick= {handleSubmit} type="submit">Hidden Button</button>
                 </form>
             </div>
             <div className="MessageSender__bottom">

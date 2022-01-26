@@ -17,7 +17,6 @@ function Sidebar(){
     return(
         <div className="sidebar">
             <div className="sidebar__top">
-                <SidebarRow src={process.env.PUBLIC_URL + '/assets/Amina.PNG'} title = "Amina ELK"/>
                 <SidebarRow Icon={DynamicFeedIcon} title = "Mon flux"/>
                 <SidebarRow Icon={BookmarksIcon} title="Enregistrements"/>
                 <SidebarRow Icon={PeopleIcon} title = "Groupes"/>
